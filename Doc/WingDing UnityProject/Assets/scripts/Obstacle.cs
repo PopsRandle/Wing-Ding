@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// Detects when the ball touches the goal, and then win the level
-/// </summary>
-public class Goal : MonoBehaviour
+
+public class Obstacle : MonoBehaviour
 {
-    public GameObject WinText;
+    public GameObject gameOverText;
     private AudioSource audioSource;
 
     private void Start()
@@ -17,15 +15,16 @@ public class Goal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Teeech!");
-        if (collision.tag == "Player")
+        if(collision.tag == "Player")
         {
-            WinText.SetActive(true);
+            gameOverText.SetActive(true);
             audioSource.Play();
-            Debug.Log("Goal >:(");
+            Debug.Log("Touched Obstacle >:(");
             GameOver.isGameOver = true;
         }
-
-
+                
+                
     }
+
 
 }
