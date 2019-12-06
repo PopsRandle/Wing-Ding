@@ -9,7 +9,7 @@ public class LoadScreen : MonoBehaviour
    public void LoadGame()
     {
         // Only specifying the sceneName or sceneBuildIndex will load the Scene with the Single mode
-        SceneManager.LoadScene("Game Screen", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Game Screen");
     }
 
 }     
